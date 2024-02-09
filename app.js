@@ -7,8 +7,9 @@ let operator = null;
 const display = document.querySelector(".display");
 const operandButtons = document.querySelectorAll(".operand");
 const operatorButtons = document.querySelectorAll(".operator");
+const clearButton = document.querySelector(".clear");
 
-display.textContent = displayValue;
+window.addEventListener("load", clear);
 
 operandButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -25,6 +26,8 @@ operatorButtons.forEach((btn) => {
   });
 });
 
+clearButton.addEventListener("click", clear);
+
 function updateDisplay(value) {
   if (displayValue.length >= 10) return;
   if (displayValue[0] === "0") {
@@ -35,6 +38,15 @@ function updateDisplay(value) {
     displayValue += value;
     display.textContent = displayValue;
   }
+}
+
+function clear() {
+  displayValue = "0";
+  firstNumber = null;
+  secondNumber = null;
+  operator = null;
+  display.textContent = displayValue;
+  // console.log(displayValue, firstNumber, secondNumber, operator);
 }
 
 function add(num1, num2) {
