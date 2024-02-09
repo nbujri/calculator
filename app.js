@@ -3,6 +3,7 @@ let displayValue = "0";
 let firstNumber = null;
 let secondNumber = null;
 let operator = null;
+let result = null;
 
 const display = document.querySelector(".display");
 const operandButtons = document.querySelectorAll(".operand");
@@ -49,6 +50,21 @@ function clear() {
   operator = null;
   display.textContent = displayValue;
   // console.log(displayValue, firstNumber, secondNumber, operator);
+}
+
+function operate(num1, num2, operator) {
+  switch (operator) {
+    case "+":
+      return add(num1, num2);
+    case "-":
+      return subtract(num1, num2);
+    case "*":
+      return multiply(num1, num2);
+    case "/":
+      return divide(num1, num2);
+    default:
+      break;
+  }
 }
 
 function add(num1, num2) {
