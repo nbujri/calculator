@@ -3,3 +3,57 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.calculator {
+  font-family: monospace;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(6, 75px);
+  gap: 5px;
+  padding: 10px;
+  background-color: #000;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  font-size: 64px;
+  font-weight: bold;
+  font-style: italic;
+  grid-column: 1 / 5;
+  padding: 10px 20px;
+  justify-content: flex-end;
+}
+
+.button {
+  font-family: monospace;
+  font-size: 32px;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  filter: brightness(150%);
+}
+
+.equalBtn {
+  grid-column: 3 / 5;
+}
+
+.operator {
+  background-color: #ff4a13;
+  color: #fff;
+}
+
+.operand,
+.decimal {
+  background-color: #d1d5db;
+}
