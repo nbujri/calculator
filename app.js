@@ -14,6 +14,8 @@ window.addEventListener("load", clear);
 operandButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     // console.log(e.target.textContent);
+    // prevent adding multiple commas
+    if (e.target.textContent === "." && displayValue.includes(".")) return;
     updateDisplay(e.target.textContent);
     console.log(displayValue);
   });
