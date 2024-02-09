@@ -6,6 +6,7 @@ let operator = null;
 
 const display = document.querySelector(".display");
 const operandButtons = document.querySelectorAll(".operand");
+const operatorButtons = document.querySelectorAll(".operator");
 
 display.textContent = displayValue;
 
@@ -14,6 +15,13 @@ operandButtons.forEach((btn) => {
     // console.log(e.target.textContent);
     updateDisplay(e.target.textContent);
     console.log(displayValue);
+  });
+});
+
+operatorButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    operator = e.target.textContent;
+    console.log(operator);
   });
 });
 
@@ -27,4 +35,20 @@ function updateDisplay(value) {
     displayValue += value;
     display.textContent = displayValue;
   }
+}
+
+function add(num1, num2) {
+  return num1 + num2;
+}
+
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+function divide(num1, num2) {
+  return num1 / num2;
 }
